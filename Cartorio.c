@@ -118,52 +118,70 @@ int deletar() // Função
 
 int main() // Função
 	{
-	int opcao=0; //definindo variáveis 
-	int laco=1;
-	
-	for(laco=1;laco=1;) //comando para fazer o laço/loop
-	{
+		int opcao=0; //definindo variáveis 
+		int laco=1;
+		char senhadigitada[10]="a";
+		int comparacao;
 		
-		system("cls"); //comando para limpar tudo que estiver acima dele, deixando a tela menos poluida
+		printf("### Cartório da EBAC ###\n\n");
+		printf("Login de administrador!\n\nDigite a sua senha: ");
+		scanf("%s",senhadigitada);
 		
-		setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
+		comparacao = strcmp(senhadigitada, "admin");
 		
-		printf("### Cartório da EBAC ###\n\n"); //inicio do menu
-		printf("Escolha a opção desejada do menu:\n\n");
-		printf("\t1 - Registrar nomes\n");
-		printf("\t2 - Consultar os nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
-		printf("\t4 - Sair do sistema\n\n");
-		printf("Opção: "); //Fim do menu
-		
-		scanf("%d", &opcao); //Armazenando variável na opção do usuário
-		
-		 system("cls");
-		
-		switch(opcao)
+		if(comparacao == 0)
 		{
-			case 1:
-			registro();
-			break;
+	 		system ("cls");
+			for(laco=1;laco=1;) //comando para fazer o laço/loop
+			{
 			
-			case 2:
-			consulta();
-			break;
-			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o sistema!\n");
-			return 0;
-			break;	
-			
-			default:
-			printf("Essa opção não esta disponível\n");
-			system("pause");
-			break;	
+				system("cls"); //comando para limpar tudo que estiver acima dele, deixando a tela menos poluida
 				
+				setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
+				
+				printf("### Cartório da EBAC ###\n\n"); //inicio do menu
+				printf("Escolha a opção desejada do menu:\n\n");
+				printf("\t1 - Registrar nomes\n");
+				printf("\t2 - Consultar os nomes\n");
+				printf("\t3 - Deletar nomes\n\n");
+				printf("\t4 - Sair do sistema\n\n");
+				printf("Opção: "); //Fim do menu
+				
+				scanf("%d", &opcao); //Armazenando variável na opção do usuário
+				
+				 system("cls");
+				
+				switch(opcao)
+				{
+					case 1:
+					registro();
+					break;
+					
+					case 2:
+					consulta();
+					break;
+					
+					case 3:
+					deletar();
+					break;
+					
+					case 4:
+					printf("Obrigado por utilizar o sistema!\n");
+					return 0;
+					break;	
+					
+					default:
+					printf("Essa opção não esta disponível\n");
+					system("pause");
+					break;	
+						
+				}
+			}
 		}
+		else
+		printf("Senha incorreta!"); 	
 	}
-}
+
+	
+	
+	
